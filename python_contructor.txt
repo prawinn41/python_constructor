@@ -1,0 +1,72 @@
+costructor:
+-----------------
+1. contructor is a special method in python
+2. the name constructor should be __init__(self)
+3. constructor will be executed automatically at the time of
+object creation
+4. the main purpose of constructor is to declare and initialize 
+some instance variables
+5. per object constructor will be excuted only once
+6. constructor can take atleast one argument (atleast self)
+
+note:
+constructor is optional  and if we not providing any constructor 
+then python will provide default constructor
+
+
+method and constructor
+------------------------
+
+instance variables(object level variables)
+--------------------  
+if the value of varible is varied from object to object,
+such type of objects is nothing but instace variables
+
+for every object a seperate copy of instaance variable is created
+
+where we can declare instance varaible
+----------------------------------------
+1. inside a constructor by using self varaible
+2. inside instance method by using self variable
+3. outside of the class by using object reference varaible
+
+1. inside a constructor by using self varaible
+-------------------------------------------
+we can declare instance varaible inside constructor by using self keyword
+
+class Emp:
+	def __init__(self):
+	    self.eno=101
+		self.ename='chai'
+		self.esal=10000
+e=Emp()
+print(e.__dict__)
+2. inside instance method by using self variable
+
+if any instance variable declared inside instance method
+then taht instance variable will be added once we call that method
+
+class Test:
+	def __init__(self):     #constructor part
+		self.a=10   
+		self.b=20
+	def m1(self):      #method part 
+		self.c=30
+t=Test()
+t.m1()
+print(t.__dict__)	
+
+3. outside of the class by using object reference varaible
+we can add instance variables outside of a class to a particular object
+
+class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+	def m1(self):
+		self.c=30
+t=Test()
+t.m1()
+t.d=40         # object reference varaible
+print(t.__dict__)
+
